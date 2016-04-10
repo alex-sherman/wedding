@@ -1,0 +1,19 @@
+{% include head.html %}
+<body>
+    <div class="container">
+        {% include header.html %}
+
+        <div class="content">
+            <div class="row page-header">
+                <h2>{{ page.title }}</h2>
+            </div>
+            
+            <div id="main-container" class="row">
+                <div id="main" class="col-xs-12">
+                    {{ content }}
+                </div> <!-- #main -->
+            </div> <!-- #main-container -->
+        </div>
+    </div>
+</body>
+</html>
