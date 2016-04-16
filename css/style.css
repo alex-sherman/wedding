@@ -2,28 +2,63 @@
 @font-face{font-family:'Futura';src:url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaLT-Book-667f6bf4f10dff5fe984d6c05deb1e6f.eot);src:url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaLT-Book-667f6bf4f10dff5fe984d6c05deb1e6f.eot?#iefix) format("embedded-opentype"),url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaLT-Book-e851b37e6e508127edc3e39d53f283f4.woff) format("woff"),url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaLT-Book-f399e586b3df2227c9c914eb38fa5759.ttf) format("truetype"),url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaLT-Book-994e7fa000d64e77617102d5133c2e26.svg) format("svg");font-weight:normal;font-style:normal}@font-face{font-family:'Futura';src:url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaBT-BookItalic-541e3984df65df4aedb2ee1ef8250db8.eot);src:url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaBT-BookItalic-541e3984df65df4aedb2ee1ef8250db8.eot?#iefix) format("embedded-opentype"),url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaBT-BookItalic-c0c1cc688be99abf6600ae35a0ec55f8.woff) format("woff"),url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaBT-BookItalic-82bc9e4284109d3bbcfc9fc4898707c5.ttf) format("truetype"),url(https://d3jzug80jq9bku.cloudfront.net/assets/FuturaBT-BookItalic-3e56a6cd5cb4436e6d70343bd70d3215.svg) format("svg");font-weight:normal;font-style:italic}
 
 /* Override some defaults */
-html, body {
-  background-color: #FFF;
-  background-image: url("/images/background.jpg");
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: unset;
+}
+.bg-img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-position-x: center;
+  background-image: url("http://i.huffpost.com/gen/1837292/images/o-MADISON-WISCONSIN-facebook.jpg");
   background-attachment: fixed;
   background-repeat:no-repeat;
   background-size:cover;
-  height: 100%;
+}
+.bg-img:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, rgba(170,0,107,0.0), rgba(0,0, 70, 0.4));
+  background-attachment: fixed;
 }
 .container {
-    height: 100%;
+  height: 100%;
+  text-align: center;
 }
 .container > footer p {
-  text-align: center; /* center align it with the container */
+  text-align: center;
 }
+img {
+  border-radius: 30px;
+}
+.medium > img {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+}
+.large > img  {
+  max-width: 500px;
+  width: 80%;
+}
+
 h1, h2 {
   margin: 0;
   padding: 0;
   display: inline;
+  font-family: "bodoni", Times, serif;
+  font-variant: small-caps;
 }
 h1 {
-  font-size: 30px;
-  line-height: 36px;
+  font-size: 36px;
+  line-height: 48px;
   color: black;
 
 }
@@ -32,44 +67,59 @@ h1 small {
   color: inherit;
 }
 h2 {
-  font-size: 24px;
+  font-size: 30px;
   line-height: 36px;
   display: inline;
 }
+h2 {
+}
 /* Page Title */
+
+#navbar {
+    background: none;
+    text-align: center;
+    line-height: 0;
+}
 .navbar-header {
     float: none;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.navbar-title::first-letter {
+  font-size: 130%;
+}
 .navbar-title {
   float: left;
+  font-family: "bodoni", Times, serif;
+  font-size: 39px;
 }
 .navbar-date {
   float: right;
+  text-align: right;
+  font-variant: small-caps;
+  font-family: "bodoni", Times, serif;
+  font-size: 39px;
 }
 .navbar-title, .navbar-date{
   color: #000;
   background-color: inherit;
-  font-family: "bodoni", Times, serif;
-  font-size: 39px;
 }
 
 /* Navbar links */
 /* The white background content wrapper */
 .content {
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(240,240,240,.75);
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 6px;
   padding-bottom: 20px;
+  position: relative;
 }
 
 .page-header {
   border-bottom-width: 0;
   text-align: center;
   font-family: "bodoni", Times, serif;
-  text-transform: uppercase;
+  font-variant: small-caps;
   font-size: 37px;
   margin-top: 0;
 }
@@ -79,15 +129,14 @@ nav {
 }
 .navbar {
   margin-bottom: 10px;
-  border-radius: 0;
+  border-radius: 0px;
 }
 .navbar .row {
     margin-left: 0;
     margin-right: 0;
 }
-.navbar-nav {
-    background-color: #FFF;
-    color: rgba(255, 255, 255,1)
+.navbar-default .navbar-nav>li>a {
+    color: black;
 }
 .navbar ul {
   list-style: none;
@@ -97,6 +146,7 @@ nav {
   text-align: center;
   font-family: "futura", Arial, sans-serif !important;
     font-size: 19px !important;
+  display: inline-block;
 }
 .navbar-collapse {
   border-width: 0;
@@ -124,8 +174,11 @@ nav {
   text-decoration: none;
 }
 
+.widget {
+  background: rgba(240, 240, 240, 0.75);
+}
+
 .widget, .widget a {
-  background: rgba(255, 255, 255, 0.75);
   margin-bottom: 30px;
   cursor: hand;
   cursor: pointer;
@@ -144,8 +197,8 @@ nav {
   line-height: 300px;
 }
 .widget.medium, .widget.medium a {
-  height: 170px;
-  line-height: 170px;
+  height: 230px;
+  line-height: 230px;
 }
 .widget.small, .widget.small a {
   height: 100px;
@@ -155,5 +208,19 @@ nav {
 @media (min-width: 1200px) {
   .container {
       width: 970px;
+  }
+  .content {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      width: 970px;
+  }
+  .content {
+    padding-left: 150px;
+    padding-right: 150px;
   }
 }
