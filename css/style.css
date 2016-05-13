@@ -38,6 +38,7 @@ body {
 }
 img {
   border-radius: 30px;
+  max-width: 100%;
 }
 .medium > img {
   width: 100%;
@@ -72,6 +73,10 @@ h2 {
   display: inline;
 }
 h2 {
+}
+
+li {
+  text-align: left;
 }
 /* Page Title */
 
@@ -210,8 +215,8 @@ nav {
       width: 970px;
   }
   .content {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 130px;
+    padding-right: 130px;
   }
 }
 
@@ -220,7 +225,7 @@ nav {
       width: 970px;
   }
   .content {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 130px;
+    padding-right: 130px;
   }
 }

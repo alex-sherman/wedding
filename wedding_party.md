@@ -3,6 +3,13 @@ layout: default
 title: Wedding Party
 ---
 
+Bride and Groom
+------
+
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-xs-12 medium"><img src="images/party/us.png"></div>
+</div>
+
 Bride's Side
 ------
 
